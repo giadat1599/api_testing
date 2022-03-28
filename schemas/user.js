@@ -25,6 +25,8 @@ exports.updateUserSchema = object({
 
 exports.changePasswordUserSchema = object({
   body: object({
-    new_password: string().required('Password is required'),
+    new_password: string()
+      .required('Password is required')
+      .min(10, 'Password must be at least 10 characters'),
   }),
 });
