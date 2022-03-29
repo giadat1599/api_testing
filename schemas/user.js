@@ -6,7 +6,7 @@ exports.registerUserSchema = object({
     email: string().required('Email is required').email('Invalid email'),
     password: string()
       .required('Password is required')
-      .min(5, 'Password must be at least 10 characters'),
+      .min(5, 'Password must be at least 5 characters'),
   }),
 });
 
@@ -27,6 +27,6 @@ exports.changePasswordUserSchema = object({
   body: object({
     new_password: string()
       .required('Password is required')
-      .min(5, 'New Password must be at least 10 characters'),
+      .min(5, 'New Password must be at least 5 characters'),
   }),
 });
