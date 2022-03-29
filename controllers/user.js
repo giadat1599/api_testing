@@ -64,10 +64,10 @@ exports.getInfo = async (req, res, next) => {
 };
 
 exports.updateUser = async (req, res, next) => {
-  const { name, phone, photo, email } = req.body;
+  const { name, phone, photo } = req.body;
   const updatedUser = await UserModel.findByIdAndUpdate(
     req.user.user_id,
-    { name, phone, photo, email },
+    { name, phone, photo },
     { new: true }
   );
 
